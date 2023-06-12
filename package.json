@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "redux": "^4.2.1"
+    "cross-fetch": "^3.1.6",
+    "redux": "^4.2.1",
+    "redux-thunk": "^2.4.2"
   }
 }
