@@ -1,5 +1,5 @@
 const redux = require('redux');
-const createStore = redux.configureStore;
+const createStore = redux.createStore;
 
 const incrementAction = {type: 'INCREMENT'}
 const decrementAction = {type: 'DECREMENT'}
@@ -16,3 +16,10 @@ function counterReducer(state = 3, action){
     }
 
 }
+
+const store = createStore(counterReducer)
+console.log(store.getState())
+
+store.subscribe(()=>{console.log(store.getState())}) // .subscribe() é ativado ao mudar estado
+
+store.dispatch(incrementAction) // .dispacth() levará a ação(argumento) que será levada para o reducer.  
