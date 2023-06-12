@@ -20,6 +20,7 @@ const store = createStore(allReducers)
 console.log(store.getState())
 
 store.subscribe(()=>{console.log(store.getState())}) // .subscribe() é ativado ao mudar estado
+//store.subscribe(()=>{console.log(store.getState().counter ou .list)}) só printar o counter
 
 store.dispatch(incrementAction())
 store.dispatch(addItemAction("First added item")) //o dispatch será feito para todos os itens, e verificar se type coincindir será retornado o quer estiver descrito nele.
