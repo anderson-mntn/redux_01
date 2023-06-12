@@ -28,9 +28,9 @@ function counterReducer(state = 3, action){
 // --------------
 // Aula aprendendo a usar mais de um reducer com uma lista
 
-const addItemAction = (item) =>{ return {type: "ADD_ITEM", payload: item}}
+const addItemAction = (item) => { return {type: "ADD_ITEM", payload: item}}
 
-const listReducer = (state = [], action) =>{
+const listReducer = (state = ["default item"], action) => {
     switch (action.type) {
         case 'ADD_ITEM': return [...state, action.payload] 
         default: return state;
@@ -48,8 +48,7 @@ console.log(store.getState())
 store.subscribe(()=>{console.log(store.getState())}) // .subscribe() é ativado ao mudar estado
 
 store.dispatch(incrementAction())
+store.dispatch(addItemAction("First added item")) //o dispatch será feito para todos os itens, e verificar se type coincindir será retornado o quer estiver descrito nele.
 store.dispatch(incrementAction(1))
 store.dispatch(incrementAction(5))
 store.dispatch(decrementAction(3))
-
-
