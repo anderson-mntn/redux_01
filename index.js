@@ -1,9 +1,8 @@
 const redux = require('redux');
 const createStore = redux.createStore;
 const combineReducer = redux.combineReducers
-
-const incrementAction = (value) => { return {type: 'INCREMENT', payload: value || 1 } }
-const decrementAction = (value) => { return {type: 'DECREMENT', payload: value || 1 } }
+const { incrementAction, decrementAction} = require('./actions/counterActions')
+const { addItemAction } = require('./actions/listActions')
 
 function counterReducer(state = 3, action){
 
@@ -28,7 +27,7 @@ function counterReducer(state = 3, action){
 // --------------
 // Aula aprendendo a usar mais de um reducer com uma lista
 
-const addItemAction = (item) => { return {type: "ADD_ITEM", payload: item}}
+
 
 const listReducer = (state = ["default item"], action) => {
     switch (action.type) {
