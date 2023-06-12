@@ -1,6 +1,6 @@
 const { createStore, applyMiddleware } = require('redux');
-const thunk = require('redux-thunk').default;
-const fetch = require('cross-fetch');
+const thunk = require('redux-thunk').default;  //npm install redux-thunk
+const fetch = require('cross-fetch');  //npm install cross-fetch 
 
 const initiaState = [ {id:0, title: "Default item", completed: false}]
 
